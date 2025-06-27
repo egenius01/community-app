@@ -9,6 +9,3 @@ class GroupViewSet(ModelViewSet):
     serializer_class = GroupSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
-    def perform_create(self, serializer):
-        serializer.save(creator=self.request.user)
-
