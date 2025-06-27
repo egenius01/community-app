@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+env/
+node_modules/
+db.sqlite3
+/.qodo
+/.DS_Store
