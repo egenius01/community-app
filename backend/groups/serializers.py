@@ -1,8 +1,11 @@
 from rest_framework import serializers
 from .models import Group
+from accounts.serializers import UserSerializer
 
 
 class GroupSerializer(serializers.ModelSerializer):
+    creator = UserSerializer(read_only=True)
+    
     class Meta:
         model = Group
         fields = '__all__'

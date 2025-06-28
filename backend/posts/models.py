@@ -6,7 +6,8 @@ from groups.models import Group
 
 class Post(models.Model):
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name="posts")
+    group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name="posts", null=True, blank=True)
+    title = models.CharField(max_length=70)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
